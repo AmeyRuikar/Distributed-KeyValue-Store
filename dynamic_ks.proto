@@ -1,0 +1,27 @@
+// create a service
+syntax = "proto3";
+
+service DynamicKS {
+
+  rpc setKey (request) returns (response) {}
+  rpc getKey (key) returns (value) {}
+
+}
+
+// The request message containing the key value.
+message request {
+  string key = 1;
+  string value = 2;
+}
+
+message response {
+  bool status = 1;
+}
+
+message key {
+    string key = 1;
+}
+
+message value {
+    string value = 1;
+}
